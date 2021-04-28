@@ -30,18 +30,17 @@
     components: {
       Cell, 
     },
-    setup() {
+    setup: function() {
       let boardSize = ref(3);
       let xTurn = ref(true);
       let whoIsWinner = new WOL();
-      let currentPlayer;
+      let currentPlayer = computed(() => (xTurn.value ? "X" : "O"))
       
       let cellsArray = ref(
         Array(boardSize.value * boardSize.value).fill(null)
       );
       
       let winner = computed(() => whoIsWinner.checkWinner(cellsArray.value));
-      currentPlayer = computed(() => (xTurn.value ? "X" : "O"))
       
       const move = (index: number) => {
         if(cellsArray.value[index] || winner.value) return
