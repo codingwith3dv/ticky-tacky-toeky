@@ -2,6 +2,7 @@
   <button class="sq sq-def" v-if="!sqval">{{ sqval }}</button>
   <button class="sq sq-x" v-else-if="sqval == 'X'">{{ sqval }}</button>
   <button class="sq sq-o" v-else-if="sqval == 'O'">{{ sqval }}</button>
+  <button class="sq sq-w" v-else>{{ sqval }}</button>
 </template>
 
 <script>
@@ -41,5 +42,11 @@
   }
   .sq-o:hover {
     background-color: #ac00ff88;
+  }
+  .sq-w {
+    background-color: #00ffaa;
+  }
+  .sq-w:hover {
+    background-color: #00ffaa88;
   }
 </style>

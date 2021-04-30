@@ -36,7 +36,10 @@ export default class WOL {
         cells[a] === cells[b] &&
         cells[a] === cells[c]
       ) {
-        return cells[a];
+        cells[a] = cells[a].toLowerCase();
+        cells[b] = cells[a].toLowerCase();
+        cells[c] = cells[a].toLowerCase();
+        return cells[a] === cells[a].toLowerCase() ? cells[a].toUpperCase() : cells[a];
       }
     }
     return null;
